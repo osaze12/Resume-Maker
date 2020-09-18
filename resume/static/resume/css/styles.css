@@ -1,0 +1,115 @@
+*:focus{
+	outline: 0 !important;
+}
+.form1, .form2, .form3, .form4, .form5{
+	display: flex;
+	flex-direction: column;
+}
+input[type=text], input[type=number]{
+	font-weight: bold;
+}
+h1{
+	color: #48494ad1;
+	padding: 15px;
+	margin-top: 26px;
+	text-transform: uppercase;
+}
+label {
+    font-weight: bold;
+    color: #676565;
+    font-size: 13px;
+}
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.inner-wrapper{
+	margin-top: 60px;
+	background: #f5f7f7d6;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+}
+form{
+	font-size: 10px;
+}
+.noti{
+	text-align: center;
+    background: #ccc8c9e0;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+}
+.msg{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.msg>p{
+	margin:0;
+}
+.msg>.error{
+	font-size: 20px;
+    color: #dc0707;
+}
+.msg>.success{
+	font-size: 20px;
+    color: #1ac52f
+}
+.msg>p{
+	font-weight: bolder;
+	color: #1f434e;
+}
+.btnn{	
+	border: 1px solid transparent;
+    font-size: 20px;
+    color: #0321057a;
+    width: 50%;
+    background: transparent;
+}
+.btnn_last{
+	border: 1px solid transparent;
+    font-size: 16px;
+    color: #0321057a;
+    width: 50%;
+    background: transparent;
+}
+
+/*THE NAVIGATION BAR*/
+	
+.nav{
+	display: flex;
+	justify-content: center;
+	height: 70px;
+	align-items: flex-end;
+	box-shadow: 0px 1px 2px #8d8d90b3;
+	margin-bottom: 29px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background: #1f434e;
+	z-index: 999;
+}
+.brand{
+	padding: 7px;
+}
+.brand a{
+	font-size: 24px;
+	font-weight: bold;
+}
+
+a{
+	text-decoration: none;
+	color: #ffffff;
+}
+a:hover{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+

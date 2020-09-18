@@ -1,0 +1,80 @@
+{% extends "resume/base.html" %}
+
+{% block title %}Create{% endblock  %}
+
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery=full %}
+
+{% block content %}
+		<div class="wrapper">
+			<div class="inner-wrapper">
+				<form method="post" class="form1-form">
+					{% csrf_token %}
+					<div class="form1 ">
+						<h1>Infomation</h1>
+						<div class="msg form1-msg" style="display: flex;"><span class="icon"></span>&nbsp;<p class="msg1"></p></div>
+
+						{% bootstrap_form form1 %}
+						<button type="submit" class="btnn" id="form1"><span class="g glyphicon glyphicon-circle-arrow-right"></span></button>
+				    </div>
+				    <div class="form2">
+
+				    	<h1>Education</h1>
+				    	<div class="msg form2-msg" style="display: flex;"><span class="icon"></span>&nbsp;<p class="msg2"></p></div>
+
+						{% bootstrap_form form2 %}
+						<button  type="submit" class=" btnn" id="form2"><span class="g glyphicon glyphicon-circle-arrow-right"></span></button>
+						<button  type="submit" class=" btnn" id="addNewForm2"><span class="g glyphicon glyphicon-plus"></span></button>
+
+			       </div>
+
+			       <div class="form3">
+				    	<h1>Skill</h1>
+				    	<div class="msg form3-msg" style="display: flex;"><span class="icon"></span>&nbsp;<p class="msg3"></p></div>
+
+						{% bootstrap_form form3 %}
+						<button type="submit" class="btnn" id="form3"><span class="g glyphicon glyphicon-circle-arrow-right"></span></button>
+						<button  type="submit" class=" btnn" id="addNewForm3"><span class="g glyphicon glyphicon-plus"></span></button>
+				    </div>
+
+				    <div class="form4">
+				    	<h1>Certificate</h1>
+				    	<div class="msg form4-msg" style="display: flex;"><span class="icon"></span>&nbsp;<p class="msg4"></p></div>
+
+						{% bootstrap_form form4 %}
+						<button type="submit" class="btnn" id="form4" ><span class="g glyphicon glyphicon-circle-arrow-right"></span></button>
+						<button  type="submit" class=" btnn" id="addNewForm4"><span class="g glyphicon glyphicon-plus"></span></button>
+				    </div>
+
+				    <div class="form5">
+				    	<h1>Hobbie</h1>
+				    	<div class="msg form5-msg" style="display: flex;"><span class="icon"></span>&nbsp;<p class="msg5"></p></div>
+
+						{% bootstrap_form form5 %}
+						<button type="submit" class="btnn form1-btn" id="form5"><span class="g glyphicon glyphicon-circle-arrow-right"></span></button>
+						<button  type="submit" class=" btnn" id="addNewForm5"><span class="g glyphicon glyphicon-plus"></span></button>
+				    </div>
+
+				    <div class="form6">
+				    	<h1>Experience</h1>
+				    	<div class="msg form6-msg" style="display: flex;"><span class="icon"></span>&nbsp;<p class="msg6"></p></div>
+
+						{% bootstrap_form form6 %}
+						<button type="submit" class="btnn_last form1-btn" id="form6"><span class="g glyphicon glyphicon-ok-sign"></span>&nbsp;Done</button>
+						<button  type="submit" class=" btnn" id="addNewForm6"><span class="g glyphicon glyphicon-plus"></span></button>
+				    </div>
+			    </form>
+			</div>
+		</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+

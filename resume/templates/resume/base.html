@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resume Maker- {%block title%}{% endblock%} </title>
+
+	<!-- LOAD STATIC FILES, CSS AND JS-->
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'resume/css/bootstrap.min.css' %}">
+
+	<!-- BOOTSTRAP 3 IS INCLUDED BECAUSE OF IT'S GLYPICONS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'resume/bootstrap3/css/bootstrap.min.css'%} ">
+	<link rel="stylesheet" type="text/css" href="{% static 'resume/css/styles.css' %}">
+</head>
+<body>
+	
+	<div class="content">
+			<div class="nav">
+				<div class="brand">
+					<a href="{% url 'create' %}">Resume Maker </a>
+				</div>
+				
+			</div>
+			{% block content %}
+			{% endblock %}
+    </div>
+
+<!-- JAVASCRIPT -->
+<script type="text/javascript" src="{% static 'resume/js/jquery.min.js' %} "></script>
+<script type="text/javascript" src="{% static 'resume/js/jquery.cookie.js' %} "></script>
+
+
+<script type="text/javascript" src="{% static 'resume/js/bootstrap.min.js' %} "></script>
+<script type="text/javascript" src="{% static 'resume/js/main.js' %} "></script>
+
+
+
+
+
+</body>
+</html>

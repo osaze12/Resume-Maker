@@ -1,0 +1,316 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PDF</title>
+	<!-- BOOTSTRAP 3 IS INCLUDED BECAUSE OF IT'S GLYPICONS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'resume/bootstrap3/css/bootstrap.min.css'%} ">
+	<style type="text/css">
+				*{
+					margin:0;
+					padding:0;
+				}
+				.experience,.education,.skill,.certificate,.hobbie{
+					border-bottom: 1px solid #18d6b3;
+				    margin: 17px 10px 18px 0;
+				}
+				.outer-top{
+					display: -webkit-box;
+					display: flex;
+				}
+				.section1{
+					display: -webkit-box;
+					display: flex;
+
+					-webkit-box-flex: 4;
+					flex-grow: 4;
+				}
+				.section1>h1{
+					font-weight: bold;
+				    font-size: 33px;
+			    	text-transform: none;
+			    	color: #353232;
+			    	padding-left: 67px;
+				}
+				.section2{
+					display: -webkit-box;
+					display: flex;
+
+					-webkit-box-orient: vertical;
+					flex-direction: column;
+
+					-webkit-box-flex: 1;
+					flex-grow: 1;
+
+					-webkit-box-align: end;
+					align-items: flex-end;
+
+			    	padding: 13px;
+			    	padding-right: 80px;
+				}
+				.section1>h1>span{
+				    display: block;
+			    	font-size: 12px;
+			    	color: #18d6b3;
+			    	font-weight: bolder;
+			    	text-align: left;
+			    	
+				}
+				.section2>span{
+					display: block;
+					padding-bottom: 6px;
+				    color: #494b4c;
+				    font-size: 13px;
+				    font-weight: bold;
+
+				}
+				.middle{
+					display: -webkit-box;
+					display: flex;
+
+				    padding: 7px;
+				    font-size: 15px;
+
+				    box-align: start;
+				    align-items: flex-start;
+				}
+				.middle>p{
+					color: #494b4c;
+					padding: 0 70px;
+				}
+				.degree{
+					text-transform: uppercase;
+				}
+				h3{
+					font-size: 13px;
+					font-weight: bold;
+
+					display: -webkit-box;
+					display: flex;
+
+					box-align: baseline;
+					align-items: baseline;
+					padding: 7px 0;
+				}
+
+				.h>p{
+					font-size: 14px;
+					padding:5px;
+				}
+				.buttom{
+					/*display: -webkit-box;
+					display: flex;
+
+					box-align: start;
+					align-items: flex-start;
+
+					-webkit-box-pack: center;
+					justify-content: center;*/
+				
+				}
+				.buttom>.section{
+					/*display: -webkit-grid;
+    				-webkit-grid-columns: repeat(2, 60%);*/
+					padding: 17px;
+
+					/*display: -webkit-box;
+					display: flex;
+
+					-webkit-flex-wrap: wrap;
+				    flex-wrap: wrap;*/
+
+				    width: 90%;
+
+				}
+
+				.outer-buttom{
+					display: -webkit-box;
+					display: flex;
+
+					-webkit-box-pack: center;
+					justify-content: center;
+				}
+				
+				.hob>span{
+					font-size: 12px;
+					font-weight: 600;
+				    background: #18d6b3;
+				    padding: 5px;
+				    border-radius: 5px;
+				    color: white;
+				    margin: 7px;
+				        float: left;
+				}
+				.title{
+					font-weight: bolder;
+					font-size: 15px;
+					margin:0;
+				}
+				.h{
+					    width: 50%;
+    					padding: 30px;
+    					float: right;
+				}
+				.last{
+					clear: left;
+				}
+				.box{
+					width:20px;
+					height: 20px;
+					background: #18d6b3;
+					color:white;
+					margin: 5px;
+
+					display: -webkit-box;
+					display: flex;
+
+					-webkit-box-pack: center;
+				    justify-content: center;
+
+				    box-align: center;
+				    align-items: center;
+				}
+				li{
+					list-style: none;
+				}
+				.s{
+					width: 80%;
+
+					display: -webkit-box;
+				    display: flex;
+
+				    box-align: baseline;
+				    align-items: baseline;
+
+				    -webkit-box-pack: space-between;
+				    justify-content: space-between;
+				}
+				.g{
+					color:#18d6b3;
+				}
+				.sk>.s>h3>span{
+
+				}
+				.pdf-btn{
+					display: none;
+					position: relative;
+					position: fixed;
+				    right: 20px;
+				    top: 50%;
+				}
+				span.delete, span.pdf-download{
+					width: 80px;
+				    height: 80px;
+				    border-radius: 50%;
+				    color: white;
+				    padding: 29px;
+			        font-weight: bold;
+				    z-index: 1;
+
+				    display: -webkit-box;
+				    display: flex;
+
+				    -webkit-box-pack: center;
+				    justify-content: center;
+
+				    box-align: center;
+				    align-items: center;
+				    
+				    cursor: pointer;
+			        margin: 5px;
+				}
+				span.delete{
+					background: grey;
+					box-shadow: 1px 2px 5px darkslategrey;
+				}
+				span.pdf-download{
+					background: #7d0f0f;
+					box-shadow: 1px 2px 5px #7d0f0f;
+				}
+	</style>
+</head>
+<body>
+	 	<!-- PDF DOWNLOAD CIRCLE BUTTON -->
+		<div class="pdf-btn">
+			<span class="delete">Delete</span>
+			<span class="pdf-download">PDF</span>
+		</div>
+		<div class="'start">
+			<div class="outer-top">		
+				<div class="section1">
+					<h1>{{info.first_name}} {{info.last_name}}<span>{{info.professional_title}}</span></h1>
+				</div>
+				<div class="section2">
+					<span>{{info.email}}&nbsp;<span class="g glyphicon glyphicon-envelope"></span> </span>
+					<span>{{info.phone_number}}&nbsp;<span class="g glyphicon glyphicon-earphone"></span></span>
+					<span>{{info.location}}&nbsp;<span class="g glyphicon glyphicon-map-marker"></span></span>
+					<span>{{info.projects_link}}&nbsp;<span class="g glyphicon glyphicon-globe"></span> </span>
+				</div>	
+			</div>
+
+			<div class="middle">
+				<p class="">{{ info.resume_summary }}</p>
+			</div>
+			<div class="outer-buttom">
+				<div class="buttom">
+					<div class="section">
+						{% if exps != False %}
+							<div class="h">
+								<h2 class="experience">WORK EXPERIENCE</h2>
+							  {% for exp in exps %}
+								<h3 class="title">&bull; {{exp.title }} </h3>
+								<p>{{ exp.description }} </p>
+							  {% endfor %}
+							</div>
+						{% endif %}
+
+						{% if edus != False %}
+						 <div class="h">
+							<h2 class="education">EDUCATION</h2>
+						  {% for edu in edus %}
+							<h3 class="title">&bull; &nbsp;<span class="degree">{{edu.degree }}</span>&nbsp;in {{edu.studied }} </h3>
+							<p>{{edu.school_name }} </p>
+						  {% endfor %}
+						 </div>
+					    {% endif %}
+					
+						{% if plot != False %}
+						 <div class="h">
+							<h2 class="skill">SKILL</h2>
+							<img src="{{plot}}" style="width: 116%;">
+						 </div>
+						{% endif %}
+						
+
+						{% if certs != False %}
+						 <div class="h">
+							<h2 class="certificate">CERTIFICATE</h2>
+						  {% for cert in certs %}
+							<h3 class="title">&bull; {{cert.school }} <br>({{cert.year }}) </h3>
+						  {% endfor %}
+						 </div>
+						{% endif %}
+
+					
+						{% if hobs != False %}
+						 <div class="h last">
+							 <h2 class="hobbie">INTEREST</h2>
+							 <div class="hob">
+							  {% for hob in hobs %}
+								 <span>{{hob.interest }} </span>
+							  {% endfor %}
+							 </div>
+						 </div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			
+		</div>	
+		<script type="text/javascript" src="{% static 'resume/js/jquery.min.js' %} "></script>
+		<script type="text/javascript" src="{% static 'resume/js/jquery.cookie.js' %} "></script>
+		<script type="text/javascript" src="{% static 'resume/js/main.js' %} "></script>
+</body>
+</html>
+		
